@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>    
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:localPages="clr-namespace:PayFair.Mobile.Views"
+             x:Class="PayFair.Mobile.Views.MainView">
+
+    <NavigationPage.TitleView>
+        <StackLayout Orientation="Horizontal">
+            
+            <Label Text="Opt/B" HorizontalOptions="Start" VerticalOptions="Center"/>
+            <Label Text="" HorizontalOptions="StartAndExpand" />
+
+            <StackLayout Orientation="Vertical" HorizontalOptions="End">
+                <Label Text="{Binding BarName}" FontSize="Small"/>
+                <Label Text="{Binding BarBalance}" FontSize="Large" />
+            </StackLayout>
+            
+            <Button Text="ICON" HorizontalOptions="End" Command="{Binding ProfileCommand}"/>
+            
+        </StackLayout>
+    </NavigationPage.TitleView>
+    
+    
+  <!--Pages can be added as references or inline-->
+    <localPages:FriendsView Title="Friends">
+        
+    </localPages:FriendsView>
+
+    <localPages:GroupsView Title="Groups">
+        
+    </localPages:GroupsView>
+
+    <localPages:LoginView Title="Groups">
+
+    </localPages:LoginView>
+
+</TabbedPage>

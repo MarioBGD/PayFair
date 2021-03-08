@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PayFair.Mobile.Views.GroupsView">
+
+    <StackLayout Orientation="Vertical">
+        <Button Text="Create Group" Command="{Binding CreateGroupCommand}"/>
+
+
+        <ListView x:Name="GroupsListView"
+            ItemsSource="{Binding GroupsList}">
+
+
+            <!--Built in Cells-->
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="{Binding Name}"/>
+                            <Label Text="{Binding DefaultCurrency}"/>
+                            <Button Text="Enter" Command="{Binding PositiveCommand}"/>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+
+            <!--Custom View Cells-->
+            <!--
+    <ListView.ItemTemplate>
+      <DataTemplate>
+        <ViewCell>
+          <StackLayout>
+            <Label Text="{Binding Text}" 
+                   Style="{DynamicResource ListItemTextStyle}" />
+            <Label Text="{Binding Detail}" 
+                   Style="{DynamicResource ListItemDetailTextStyle}"/>
+          </StackLayout>
+        </ViewCell>
+      </DataTemplate>
+    </ListView.ItemTemplate>
+    -->
+        </ListView>
+
+        <ListView x:Name="InvitedGroupsListView"
+            ItemsSource="{Binding InvitedGroupList}">
+            
+            <!--Built in Cells-->
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="{Binding Name}"/>
+                            <Label Text="{Binding DefaultCurrency}"/>
+                            <Button Text="Accept" Command="{Binding PositiveCommand}"/>
+                            <Button Text="Accept" Command="{Binding NegativeCommand}"/>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+    </StackLayout>
+</ContentPage>
